@@ -1,3 +1,8 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic"
+    "java.compile.nullAnalysis.mode": "automatic",
+    "cucumberautocomplete.steps": [
+        "src/test/java/Steps/*.java"
+    ],
+    "cucumberautocomplete.syncfeatures": "src/test/resources/Features/*feature",
+    "cucumberautocomplete.strictGherkinCompletion": true
 }
