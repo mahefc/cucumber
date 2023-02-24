@@ -16,19 +16,23 @@ public class LoginStep extends Common {
 	
 
 	@Given("user is on login page")
-	public void verifyLoginPage() {
+	public void verifyLoginPage() throws InterruptedException {
+		logInfo("Page loaded successfully");
 		gotoPath(getProperty("APP_URL"));
 	}
 	
 	@When("^user enters (.*) and (.*)$")
 	public void userEnters(String username,String password) {
+		logInfo("Enter Username "+username);
 		setFieldByXpath(MyConstants.lpUsername, username);
+		logInfo("Enter Password "+password);
 		setFieldByXpath(MyConstants.lpPassword, password);
 	}
 
 	@And("click on login button")
 	public void clickLogin() {
 		clickElementByXpath(MyConstants.lpSignBtn);
+		logInfo("Signed In Successfully");
 	}
 	
 }

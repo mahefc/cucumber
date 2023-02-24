@@ -11,12 +11,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import Runner.TestRunner;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class Common {
 	
 	WebDriver driver;
    	static Properties config;
-	
+	static final Logger LOGGER = LogManager.getLogger(Common.class);
+
 	public void setDriver() {
 		driver = TestRunner.getDriver();
 		config = TestRunner.getConfig();
@@ -36,6 +38,18 @@ public class Common {
 	
 	public void closeDriver() {
 		driver.quit();
+	}
+
+	public void logInfo(String msg) {
+		LOGGER.info(msg);
+	}
+	
+	public boolean checkTxt(String txt) {
+		return driver.getTitle().equals(txt);
+	}
+
+	public boolean isEmpty() {
+		return driver.getTitle().isEmpty();
 	}
 	
 	public void waitFortheElement(String path) {

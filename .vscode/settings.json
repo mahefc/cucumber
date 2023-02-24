@@ -4,5 +4,6 @@
         "src/test/java/Steps/*.java"
     ],
     "cucumberautocomplete.syncfeatures": "src/test/resources/Features/*feature",
-    "cucumberautocomplete.strictGherkinCompletion": true
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

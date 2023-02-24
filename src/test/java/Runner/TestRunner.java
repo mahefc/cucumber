@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources/Features",glue= {"Steps"},tags ="@zoom or @pro")
+@CucumberOptions(features="src/test/resources/Features",glue= {"Steps"})
 public class TestRunner {
 	
 	   	private static WebDriver driver;
@@ -27,7 +27,6 @@ public class TestRunner {
 	        FileInputStream input = new FileInputStream("src/test/resources/config.properties");
 	        config.load(input);
 	        input.close();
-			System.setProperty("wevdriver.edge.driver",getProps("EDGEDRIVER"));
 	        driver = new EdgeDriver();
 			driver.manage().window().maximize();
 	    }
